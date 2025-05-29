@@ -1,0 +1,69 @@
+body {
+    background-color: #e9ecef; /* Color de fondo suave y neutro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 350px; /* Ancho del contenedor */
+    transition: transform 0.3s; /* Animación para el hover */
+}
+
+.login-container:hover {
+    transform: scale(1.02); /* Efecto de aumento al pasar el mouse */
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px; /* Separación inferior */
+    color: #343a40; /* Color oscuro para el título */
+    font-size: 24px; /* Tamaño de fuente más grande */
+}
+
+.login-container label {
+    display: block;
+    margin-top: 15px; /* Separación superior */
+    color: #495057; /* Color gris oscuro */
+    font-weight: 500; /* Peso de fuente más fuerte */
+}
+
+.login-container input {
+    width: 100%;
+    padding: 12px; /* Espaciado interno */
+    margin-top: 5px;
+    margin-bottom: 20px; /* Separación inferior */
+    border: 1px solid #5ba6f1; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente más grande */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+.login-container input:focus {
+    border-color: #00ff9d; /* Color azul al enfocar */
+    outline: none; /* Sin contorno */
+}
+
+.login-container button {
+    width: 100%;
+    padding: 12px; /* Espaciado interno */
+    background-color: #00ff9d; /* Color azul vibrante */
+    border: none;
+    color: white; /* Color del texto */
+    border-radius: 8px; /* Bordes redondeados */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente más grande */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.login-container button:hover {
+    background-color: #9800ff; /* Color azul más oscuro al pasar el mouse */
+}

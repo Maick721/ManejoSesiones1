@@ -1,5 +1,6 @@
 package org.maiccol.models;
 
+// Clase modelo para representar una Categoría
 public class Categoria {
     // Encapsulamiento usando wrappers para permitir null
     private Integer idCategoria;
