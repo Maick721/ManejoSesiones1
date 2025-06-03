@@ -41,4 +41,5 @@ public class CategoriaServlet extends HttpServlet {
         //luego redireccionamos a la vista de categoria
         getServletContext().getRequestDispatcher("/listadoCategoria.jsp").forward(req, resp);
     }
+
 }

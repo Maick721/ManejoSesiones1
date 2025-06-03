@@ -25,36 +25,35 @@
 </head>
 <body>
 <%
-    if(username.isPresent()){%>
-
+    if(username.isPresent()) {%>
 <div class="welcome"> Bienvenido <%= username.get()%>, Que deseas agregar</div>
-
 <div><p><a href="${pageContext.request.contextPath}/categoria/form">Ingrese el producto</a></p></div>
 <%}%>
 
 <h1>Listado Categoria</h1>
 <table>
     <thead>
-    <th>Id Categoria</th>
-    <th>Nombre</th>
-    <th> Descipción</th>
-    <th>Condición</th>
-    <th>Acciones</th>
+    <tr>
+        <th>Id Categoria</th>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Condición</th>
+        <th>Acciones</th>
+    </tr>
     </thead>
+    <tbody>
     <%
         for (Categoria cat : categorias) {%>
-    <tbody>
-    <td><%= cat.getIdCategoria()%></td>
-    <td><%= cat.getNombre()%></td>
-    <td><%= cat.getDescripcion()%></td>
-    <td><%= cat.getCondicion()%></td>
-    <td><a href="">Editar</a></td>
-    <td><a href="">Activar o Desactivar</a></td>
-    </tbody>
-    <% } %>
+    <tr>
+        <td><%= cat.getIdCategoria()%></td>
+        <td><%= cat.getNombre()%></td>
+        <td><%= cat.getDescripcion()%></td>
+        <td><%= cat.getCondicion()%></td>
 
+    </tr>
+    <% } %>
+    </tbody>
 </table>
 
 </body>
 </html>
-

@@ -18,6 +18,7 @@ public class CategoriaForm extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Traemos la conexión a la base de datos
+
         Connection conn = (Connection) req.getAttribute("conn");
         CategoriaService service = new CategoriaServiceJdbcImplement(conn);
         Integer id;

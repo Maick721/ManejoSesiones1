@@ -69,4 +69,16 @@ public class CategoriaServiceJdbcImplement implements CategoriaService {
             throw new ServiceJdbcException(throwables.getMessage(), throwables.getCause());
         }
     }
+    public void cambiarEstado(Integer id) {
+        try {
+            Categoria categoria = repositoryJdbc.porId(id);
+            if (categoria != null) {
+                categoria.setCondicion(categoria.getCondicion()); // invierte el estado
+                repositoryJdbc.guardar(categoria); // reusa el método guardar
+            }
+        } catch (SQLException e) {
+            throw new ServiceJdbcException(e.getMessage(), e.getCause());
+        }
+    }
+
 }
