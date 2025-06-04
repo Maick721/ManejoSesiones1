@@ -1,49 +1,56 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Maiccol
-  Date: 28/5/2025
-  Time: 23:22
+  User: USUARIO
+  Date: 3/6/2025
+  Time: 20:44
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="org.maiccol.models.Categoria" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"
+         import="java.util.*, org.maiccol.models.*" %>
 <%
-    Categoria categoria = (Categoria) request.getAttribute("categorias");
-    if (categoria == null) {
-        categoria = new Categoria(); // categoría vacía para creación
-    }
+    // Obtener los atributos de la solicitud
+    Categoria categorias = (Categoria) request.getAttribute("categorias");
+    Map<String, String> errores = (Map<String, String>) request.getAttribute("errores");
+    Productos producto = (Productos) request.getAttribute("producto"); // Asegúrate de que este atributo esté establecido en el controlador
 %>
-<%-- Declaramos el tipo de contenido de la página y codificación --%>
 <html>
 <head>
-    <%-- El título de la página cambia según si estamos editando o creando una categoría --%>
-    <title>Nueva Categoría</title>
-
-    <link rel="stylesheet" href="<%= request.getContextPath()%>css/formularioCategoria.css">
+    <title>Formulario Categoria</title>
 </head>
 <body>
+<h1>Formulario Categoria</h1>
+<div>
+    <form action="<%=request.getContextPath()%>/categoria/form" method="post">
+        <div>
+            <label for="nombre">Ingrese el nombre de categoria</label>
+            <div>
+                <input type="hidden" name="id" value="<%= categorias != null ? categorias.getIdCategoria() : "" %>">
+                <input type="text" id="nombre" name="nombre" value="<%= categorias != null && categorias.getNombre() != null ? categorias.getNombre() : "" %>">
+                <div>
+                    <span><%= (errores != null && errores.get("nombre") != null) ? errores.get("nombre") : "" %></span>
+                </div>
+            </div>
+        </div>
 
-<%-- Muestra el encabezado dinámicamente según si estamos creando o editando una categoría --%>
-<h1>Nueva Categoría</h1>
+        <div>
+            <label for="descripcion">Ingrese la descripción</label>
+            <div>
+                <input type="text" id="descripcion" name="descripcion" value="<%= categorias != null && categorias.getDescripcion() != null ? categorias.getDescripcion() : "" %>">
+                <div>
+                    <span><%= (errores != null && errores.get("descripcion") != null) ? errores.get("descripcion") : "" %></span>
+                </div>
+            </div>
+        </div>
 
-<%-- Formulario que envía los datos al controlador CategoriaFormControlador (POST) --%>
-<form action="<%= request.getContextPath() %>/categoria/form" method="post">
+        <div>
+            <input type="hidden" name="idProducto"
+                   value="<%= producto != null && producto.getIdProducto() != 0 ? producto.getIdProducto() : "" %>">
+        </div>
 
-    <%-- Campo oculto para enviar el id de la categoría. Si es nuevo, se manda como 0 --%>
-    <input type="hidden" name="idCategoria" value="<%= categoria.getIdCategoria() != null ? categoria.getIdCategoria() : 0 %>" />
-
-    <%-- Campo para el nombre de la categoría, prellenado si ya existe --%>
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" value="<%= categoria.getNombre() != null ? categoria.getNombre() : "" %>" required />
-    <br/><br/>
-
-    <%-- Campo para la descripción de la categoría, también prellenado si existe --%>
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="descripcion" required><%= categoria.getDescripcion() != null ? categoria.getDescripcion() : "" %></textarea>
-    <br/><br/>
-
-    <%-- Botón para guardar y un enlace para cancelar (regresa al listado) --%>
-    <button type="submit">Guardar</button>
-    <a href="<%= request.getContextPath() %>/categoria">Cancelar</a>
-</form>
+        <div>
+            <input type="submit" value="<%=(categorias != null && categorias.getIdCategoria() != null && categorias.getIdCategoria() > 0) ? "Editar" : "Crear"%>">
+        </div>
+    </form>
+</div>
 </body>
 </html>

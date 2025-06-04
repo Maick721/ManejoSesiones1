@@ -1,30 +1,31 @@
 package org.maiccol.models;
 
 public class Categoria {
-    // Encapsulamiento usando wrappers para permitir null
-    private Integer idCategoria;
+    //Implementar e inicializar las variables de objeto
+    //enacapsulados
+    private Long idCategoria;
     private String nombre;
     private String descripcion;
     private int condicion;
 
-    // Constructor vacío
     public Categoria() {
+
     }
 
-    // Constructor con parámetros
-    public Categoria(Integer idCategoria, String nombre, String descripcion, int condicion) {
+    public Categoria(Long idCategoria, String nombre, String descripcion, int condicion) {
         this.idCategoria = idCategoria;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.condicion = condicion;
     }
+    //Implemmentamos los método get and set
 
-    // Getters y Setters
-    public Integer getIdCategoria() {
+
+    public Long getIdCategoria() {
         return idCategoria;
     }
 
-    public void setIdCategoria(Integer idCategoria) {
+    public void setIdCategoria(Long idCategoria) {
         this.idCategoria = idCategoria;
     }
 

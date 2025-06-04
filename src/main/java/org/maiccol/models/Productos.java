@@ -1,70 +1,91 @@
-/*
- *Nombre: MAICCOL ZURITA
- * Fecha: 26/05/2025
- * Descripcion: Desarrollo de clase con atributos y metodos instanciados con un constructor apra poder mostrar
- * los atributos y que sean llamados en otra clase.*/
 package org.maiccol.models;
 
-public class Productos { // Declara la clase Producto
-
-    // Identificador único del producto
-    private Long id;
-    // Nombre del producto
+public class Productos {
+    private long idProducto;
+    private long idCategoria;
+    private String codigo;
     private String nombre;
-    // Tipo o categoría del producto
-    private String tipo;
-    // Precio del producto
-    private double precio;
+    private long stock;
+    private String descripcion;
+    private String imagen;
+    private boolean condicion;
 
-    // Constructor vacío necesario para algunos frameworks o serialización
     public Productos() {
+
     }
 
-    // Constructor con parámetros para crear un producto completo
-    public Productos(Long id, String nombre, String tipo, double precio) {
-        this.id = id;
+    public Productos(long idProducto, long idCategoria, String codigo, String nombre, long stock, String descripcion, String imagen, boolean condicion) {
+        this.idProducto = idProducto;
+        this.idCategoria = idCategoria;
+        this.codigo = codigo;
         this.nombre = nombre;
-        this.tipo = tipo;
-        this.precio = precio;
+        this.stock = stock;
+        this.descripcion = descripcion;
+        this.imagen = imagen;
+        this.condicion = condicion;
     }
 
-    // Método getter para obtener el ID del producto
-    public Long getId() {
-        return id;
+    public long getIdProducto() {
+        return idProducto;
     }
 
-    // Método setter para establecer el ID del producto
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdProducto(long idProducto) {
+        this.idProducto = idProducto;
     }
 
-    // Método getter para obtener el nombre del producto
+    public long getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(long idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
     public String getNombre() {
         return nombre;
     }
 
-    // Método setter para asignar el nombre del producto
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    // Método getter para obtener el tipo de producto
-    public String getTipo() {
-        return tipo;
+    public long getStock() {
+        return stock;
     }
 
-    // Método setter para asignar el tipo de producto
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setStock(long stock) {
+        this.stock = stock;
     }
 
-    // Método getter para obtener el precio del producto
-    public double getPrecio() {
-        return precio;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    // Método setter para asignar el precio del producto
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public boolean isCondicion() {
+        return condicion;
+    }
+
+    public void setCondicion(boolean condicion) {
+        this.condicion = condicion;
     }
 }
