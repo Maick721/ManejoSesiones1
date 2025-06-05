@@ -48,7 +48,8 @@
     <%if(username.isPresent()){%>
     <td class="actions">
       <a href="${pageContext.request.contextPath}/categoria/form?id=<%=cate.getIdCategoria()%>">Editar</a>
-      <a href="#">Eliminar</a>
+      <a href="${pageContext.request.contextPath}/categoria?action=eliminar&id=<%=cate.getIdCategoria()%>"
+         class="delete-link">Eliminar</a>
     </td>
     <%}%>
   </tr>

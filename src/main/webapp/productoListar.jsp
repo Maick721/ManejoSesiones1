@@ -5,6 +5,13 @@
   Time: 20:45
   To change this template use File | Settings | File Templates.
 --%>
+<%--
+  Created by IntelliJ IDEA.
+  User: Maiccol Zurtia
+  Date: 3/6/2025
+  Time: 20:45
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java"
          import="java.util.*, org.maiccol.models.*" %>
 <%@ page import="org.maiccol.models.Productos" %>

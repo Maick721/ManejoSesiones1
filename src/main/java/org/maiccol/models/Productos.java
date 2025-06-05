@@ -1,6 +1,8 @@
 package org.maiccol.models;
 
 public class Productos {
+
+    //Declarmaos los atributos de la CLase Productos
     private long idProducto;
     private long idCategoria;
     private String codigo;
@@ -9,6 +11,7 @@ public class Productos {
     private String descripcion;
     private String imagen;
     private boolean condicion;
+    private String nombreCategoria;
 
     public Productos() {
 
@@ -88,4 +91,10 @@ public class Productos {
     public void setCondicion(boolean condicion) {
         this.condicion = condicion;
     }
+
+    public String getNombreCategoria() { return nombreCategoria; }
+
+    public void setNombreCategoria(String nombreCategoria) { this.nombreCategoria = nombreCategoria; }
+
+
 }
